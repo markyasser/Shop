@@ -1,8 +1,14 @@
 # Shop
 
-This is a REST API for a basic shop made with Java, Spring Boot, MongoDB
+This is a REST API for a basic shop
 
-## Features:
+## Tools
+<img src="https://devicon-website.vercel.app/api/java/original-wordmark.svg" width=80 hight =80></img>
+<img src="https://devicon-website.vercel.app/api/spring/original-wordmark.svg" width=80 hight =80></img>
+<img src="https://devicon-website.vercel.app/api/mongodb/original-wordmark.svg" width=80 hight =80></img>
+
+
+## Features
 
 - User Registration
 - User Login
