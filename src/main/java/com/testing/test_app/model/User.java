@@ -3,11 +3,14 @@ package com.testing.test_app.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Document(collection = "users")
 public class User {
     private String name;
     private String email;
     private String password;
+    @JsonIgnore
     private String token;
 
     public User() {
