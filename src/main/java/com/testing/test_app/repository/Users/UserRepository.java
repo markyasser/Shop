@@ -1,4 +1,4 @@
-package com.testing.test_app.repository;
+package com.testing.test_app.repository.Users;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

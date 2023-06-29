@@ -1,11 +1,11 @@
 package com.testing.test_app.controller;
 
-import com.testing.test_app.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.testing.test_app.model.Post;
-import com.testing.test_app.repository.SearchRepository;
+import com.testing.test_app.repository.Posts.PostRepository;
+import com.testing.test_app.repository.Posts.SearchRepository;
 
 import java.util.List;
 

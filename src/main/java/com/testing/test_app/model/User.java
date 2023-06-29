@@ -1,9 +1,14 @@
 package com.testing.test_app.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+@Document(collection = "users")
 public class User {
     private String name;
     private String email;
     private String password;
+    private String token;
 
     public User() {
     }
@@ -29,8 +34,19 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String plainPassword) {
+        // encrypt password before saving it to database
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hashedPassword = passwordEncoder.encode(plainPassword);
+        this.password = hashedPassword;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
 }
