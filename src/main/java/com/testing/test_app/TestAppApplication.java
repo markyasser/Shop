@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "Springboot App", version = "1.0.0", description = "Springboot App", contact = @io.swagger.v3.oas.annotations.info.Contact(name = "Springboot App", email = "markyasser2011@gmail.com")))
+@OpenAPIDefinition(info = @Info(title = "Shop Backend", version = "1.0.0", description = "Shop Backend made with Java - Spring Boot App", contact = @io.swagger.v3.oas.annotations.info.Contact(name = "Shop App", email = "markyasser2011@gmail.com")))
 public class TestAppApplication {
 
 	public static void main(String[] args) {
