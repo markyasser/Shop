@@ -59,4 +59,15 @@ public class auth {
         }
         return ResponseEntity.ok(user);
     }
+
+    @GetMapping("/user")
+    public ResponseEntity<?> getUserById(@RequestBody String id) {
+        User user = repo.findById(id).orElse(null); // find user by id
+        if (user == null) { // if user not found
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "username not found");
+            return ResponseEntity.status(422).body(response);
+        }
+        return ResponseEntity.ok(user);
+    }
 }

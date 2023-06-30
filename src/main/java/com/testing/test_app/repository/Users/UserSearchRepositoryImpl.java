@@ -17,24 +17,26 @@ import com.mongodb.client.MongoDatabase;
 @Component
 public class UserSearchRepositoryImpl implements UserSearchRepository {
 
-    @Autowired
-    MongoClient mongoClient;
+        @Autowired
+        MongoClient mongoClient;
 
-    @Autowired
-    MongoConverter mongoConverter;
+        @Autowired
+        MongoConverter mongoConverter;
 
-    @Override
-    public User findByName(String name) {
-        MongoDatabase database = mongoClient.getDatabase("test");
-        MongoCollection<Document> collection = database.getCollection("users");
-        AggregateIterable<Document> result = collection.aggregate(Arrays.asList(new Document("$search",
-                new Document("index", "users")
-                        .append("text",
-                                new Document("query", name)
-                                        .append("path", "name"))),
-                new Document("$limit", 1L)));
-
-        User user = mongoConverter.read(User.class, result.first());
-        return user;
-    }
+        @Override
+        public User findByName(String name) {
+                MongoDatabase database = mongoClient.getDatabase("test");
+                MongoCollection<Document> collection = database.getCollection("users");
+                AggregateIterable<Document> result = collection.aggregate(Arrays.asList(new Document("$search",
+                                new Document("index", "users")
+                                                .append("text",
+                                                                new Document("query", name)
+                                                                                .append("path", "name"))),
+                                new Document("$limit", 1L)));
+                if (result.first() == null) {
+                        return null;
+                }
+                User user = mongoConverter.read(User.class, result.first());
+                return user;
+        }
 }

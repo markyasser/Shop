@@ -1,12 +1,17 @@
 package com.testing.test_app.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Document(collection = "users")
 public class User {
+
+    @MongoId
+    private String id;
+
     private String name;
     private String email;
     private String password;
@@ -17,6 +22,14 @@ public class User {
     }
 
     // setters and getters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
