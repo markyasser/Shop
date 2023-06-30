@@ -14,10 +14,13 @@ This is a REST API for a basic shop
 - User Login
 - Insert Items
 - Fetch Items
+- Delete an Item by id
 - Search on an item by a word that occured in any part of the item (Database indexing in MongoDB atlas) 
 
 ## Swagger Documentation
-![image](https://github.com/markyasser/Shop/assets/82395903/2feae2de-2745-49f4-a044-95ada278ea4e)
+![image](https://github.com/markyasser/Shop/assets/82395903/957e8b22-47b0-4638-8388-f8d7b023b61c)
+![image](https://github.com/markyasser/Shop/assets/82395903/40de04ba-f6b1-4565-a5a1-e9260ab1de19)
+
 
 
 
